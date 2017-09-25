@@ -1,0 +1,10 @@
+.saveToDb{
+	float: right;
+	border-radius: 3px;
+	padding: 0 5px 0 5px;
+	border: 1px solid;
+	cursor: pointer;
+}
+.emailList{
+	float: right;
+}
