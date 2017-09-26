@@ -20,8 +20,8 @@
 				'dbName' => 'starred'
 			),
 			'prod' => array(
-				'dbUser' => 'root',
-				'dbPass' => 'Vw4YZ2wB39',
+				'dbUser' => '--',
+				'dbPass' => '--',
 				'dbHost' => 'localhost',
 				'dbName' => 'eCrawler'
 			)
