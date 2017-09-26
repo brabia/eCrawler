@@ -8,24 +8,24 @@
 	</head>
 	<body>   
 		<div class="container">
-			<h1>eCrawler</h1>
-			<div class="form-group">
-				<label for="exampleInputEmail1">Page URL</label>
-				<input value="http://www.zappingmag.com/" type="email" class="form-control" id="pageUrl" aria-describedby="Page URL" placeholder="Page URL">
-				<small class="form-text text-muted">Page URL</small>
+			<ul class="eCrawler_tabs">
+				<li class="active">eCrawler</li>
+				<li>Menu 2</li>
+				<li>Menu 3</li>
+			</ul>
+			<div class="eCrawler_container">
+				<div class="form-group">
+					<input value="http://www.zappingmag.com/" type="email" class="form-control" id="pageUrl" aria-describedby="Page URL" placeholder="Page URL">
+					<small class="form-text text-muted">Page URL</small>
+				</div>
+				<button type="submit" class="btn btn-success emailList btn-sm">Show Emails</button>
+				<button type="submit" class="btn btn-primary btn-sm">Submit</button>
+				<p></p><div class="ajax"></div>
+				<table class="table table-striped">
+					<thead><tr><th>Page URL</th><th>Email</th></tr></thead>
+					<tbody></tbody>
+				</table>
 			</div>
-			<button type="submit" class="btn emailList">Show Emails</button>
-			<button type="submit" class="btn btn-primary">Submit</button>
-			<p></p>
-			<div class="ajax"></div>
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Page URL</th><th>Email</th>
-					</tr>
-				</thead>
-				<tbody></tbody>
-			</table>
 		</div>
 		
 		<script

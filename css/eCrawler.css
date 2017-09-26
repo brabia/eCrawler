@@ -1,3 +1,47 @@
+.{
+	font: 12px/18px arial;
+    color: #666666;
+}
+.eCrawler_tabs{
+	margin: 0 auto;
+    padding: 0;
+    margin-top: 20px;
+    overflow: hidden;
+    border-bottom: 1px solid #60C967;
+}
+.eCrawler_tabs li.active{
+    background: #60C967;
+    border: 1px solid #60C967;
+	color:#fff;
+}
+.eCrawler_tabs li:hover{
+    background: #60C967;
+	color:#fff;
+    border: 1px solid #60C967;
+}
+.eCrawler_tabs li{
+	list-style-type: none;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    float: left;
+    margin: 0 auto;
+    padding: 5px 15px 5px 15px;
+    border-radius: 3px 3px 0 0;
+    margin-right: 3px;
+	cursor:pointer;
+    border-bottom: 0;
+}
+.eCrawler_container{
+    padding: 20px;
+    border: 1px solid #60C967;
+    border-radius: 0 0 3px 3px;
+    border-top: 0;	
+	margin-bottom: 50px;
+}
+.eCrawler_container table tr td:first-child{
+	max-width: 350px;
+	overflow: hidden;
+}
 .saveToDb{
 	float: right;
 	border-radius: 3px;
@@ -7,4 +51,22 @@
 }
 .emailList{
 	float: right;
+}
+.pagination{
+	margin-bottom: 20px;
+}
+.pagination div{
+	border: 1px solid #ddd;
+    width: 25px;
+    text-align: center;
+    margin-left: 5px;
+    display: inline-block;
+    height: 25px;
+    line-height: 23px;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+}
+.pagination div.active{
+	background: #e4dede;
 }

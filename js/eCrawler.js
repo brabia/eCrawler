@@ -1,5 +1,26 @@
 var 
 apiUrl = '//www.bassemrabia.com/dd68bf97c522179d38337a47626e8e47/src/eCrawler.php',
+pagination = function(){
+	jQuery('table tbody tr').each(function(k,v){
+		var page = (k<10)?0:k.toString()[0];
+		jQuery(this).addClass('pg'+page);
+	});
+
+	jQuery('.pagination').remove();
+	jQuery('table').after('<div class="pagination"></div>');
+	for(var i=0;i<parseInt(jQuery('table tbody tr:last').attr('class').split(' ')[1].replace(/[^0-9]/g,''));i++){
+		jQuery('.pagination').append('<div>'+(i+1)+'</div>');
+	}
+	jQuery('.pagination div:first').addClass('active');
+	jQuery('table tbody tr:not(.pg'+(parseInt(jQuery('.pagination div.active').text()) - 1)+'').hide();
+
+	jQuery('.pagination div').click(function(){
+		jQuery('.pagination div').removeClass('active');
+		jQuery(this).addClass('active');
+		jQuery('table tbody tr:not(.pg'+(parseInt(jQuery('.pagination div.active').text()) - 1)+'').hide();
+		jQuery('table tbody tr.pg'+(parseInt(jQuery('.pagination div.active').text()) - 1)).show();
+	});
+},
 getHostName = function(url){
 	var hostname;
 	if(url.indexOf("://") > -1){
@@ -55,8 +76,10 @@ getEmails = function(){
 						jQuery('table tbody tr:last td:last').append('<span>'+v+'</span><br>');
 					});
 				});
+				pagination();
 			}else{
 				jQuery('.ajax').html('<div class="alert alert-success" role="alert"><span>'+r.emails+'</span></div>');
+				pagination();
 			}
 		},
 		error:function(){console.log(r);},
@@ -64,9 +87,10 @@ getEmails = function(){
 	});
 },
 eCrawler = function(){
+	jQuery('.pagination').remove();
 	var pageURL = jQuery('#pageUrl').val(), hostName = getHostName(pageURL);
 	jQuery('table tbody').html('');
-	jQuery('.ajax').html('<div class="alert alert-success" role="alert"><div class="saveToDb">Insert into DB</div><span>0</span> unique email(s) found</div>');
+	jQuery('.ajax').html('<div class="alert alert-success" role="alert"><div class="btn btn-success btn btn-primary btn-sm saveToDb">Insert into DB</div><span>0</span> unique email(s) found</div>');
 	
 	jQuery('.saveToDb').click(function(){
 		if(jQuery('.ajax span').text() !== '0'){
