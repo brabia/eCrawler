@@ -26,14 +26,18 @@
 		}
 		
 		public function fakeBots(){
-			$a = array
-			(
+			/* -----------------
+				to avoid any kind of block due to number of ajax request,
+				I am using a random bot while sending request.
+				For now, just one bot, for demonstration purposes only m using this bot
+			 ----------------- */
+			$a = array(
 				'Accelatech RSSCrawler/0.4'
 			);
 			return $a[0];
 		}
 
-		public function cors(){
+		public function setHeader(){
 			if(isset($_SERVER['HTTP_ORIGIN'])){
 				header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
 				header('Access-Control-Allow-Origin: '.$_SERVER['HTTP_ORIGIN'].'');
@@ -50,7 +54,7 @@
 		}
 
 		public function sendCurl(){			
-			$this->cors();
+			$this->setHeader();
 			
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, $this->url);
