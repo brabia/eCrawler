@@ -151,6 +151,9 @@ eCrawler = function(){
 }
 
 jQuery(document).ready(function(){
+	jQuery('.loading div').animate({'width': '100%'}, 1000*5, function(){
+		jQuery('.loading').remove();
+	});
 	jQuery('.btn-primary').click(function(){
 		eCrawler();
 	});

@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="css/eCrawler.css" />
 	</head>
 	<body>   
+		<div class="loading"><div></div></div>
 		<div class="container">
 			<ul class="eCrawler_tabs">
 				<li class="active">eCrawler</li>
